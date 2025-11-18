@@ -10,7 +10,8 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "build": "echo 'No build step required'",
-    "lint": "echo 'No linting configured'"
+    "lint": "echo 'No linting configured'",
+    "install": "npm install"
   },
   "keywords": ["mern", "finance", "ai", "express", "mongodb"],
   "author": "Your Name",
