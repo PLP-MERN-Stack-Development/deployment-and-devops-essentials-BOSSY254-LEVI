@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Bar, Doughnut, Line } from 'react-chartjs-2';
+import { Doughnut, Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -144,23 +144,7 @@ const Dashboard = () => {
     }
   };
 
-  const barData = {
-    labels: Object.keys(categoryData),
-    datasets: [{
-      label: 'Expenses by Category',
-      data: Object.values(categoryData),
-      backgroundColor: [
-        'rgba(34, 197, 94, 0.8)', 'rgba(59, 130, 246, 0.8)', 'rgba(168, 85, 247, 0.8)',
-        'rgba(239, 68, 68, 0.8)', 'rgba(245, 158, 11, 0.8)', 'rgba(14, 165, 233, 0.8)',
-      ],
-      borderColor: [
-        'rgba(34, 197, 94, 1)', 'rgba(59, 130, 246, 1)', 'rgba(168, 85, 247, 1)',
-        'rgba(239, 68, 68, 1)', 'rgba(245, 158, 11, 1)', 'rgba(14, 165, 233, 1)',
-      ],
-      borderWidth: 1,
-      borderRadius: 8,
-    }],
-  };
+
 
   const doughnutData = {
     labels: Object.keys(categoryData),
@@ -1211,5 +1195,4 @@ const keyframes = `
 const styleElement = document.createElement('style');
 styleElement.textContent = keyframes;
 document.head.appendChild(styleElement);
-
 export default Dashboard;
