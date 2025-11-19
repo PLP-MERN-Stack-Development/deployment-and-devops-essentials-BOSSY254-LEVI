@@ -106,6 +106,7 @@ const AddBudget = () => {
         alerts: formData.alerts
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [formData.name, formData.amount, formData.category, formData.period, formData.alerts]);
 
   const handleSubmit = async (e) => {
@@ -143,10 +144,6 @@ const AddBudget = () => {
     } finally {
       setLoading(false);
     }
-  };
-
-  const getSelectedCategory = () => {
-    return categories.find(cat => cat.value === formData.category);
   };
 
   return (

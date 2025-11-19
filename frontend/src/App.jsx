@@ -239,10 +239,10 @@ function App() {
             </div>
             <div style={styles.footerSocial}>
               <span style={styles.socialText}>Follow us:</span>
-              <a href="#" style={styles.socialLink}>📘</a>
-              <a href="#" style={styles.socialLink}>🐦</a>
-              <a href="#" style={styles.socialLink}>📷</a>
-              <a href="#" style={styles.socialLink}>💼</a>
+              <button style={styles.socialLink} aria-label="Facebook">📘</button>
+              <button style={styles.socialLink} aria-label="Twitter">🐦</button>
+              <button style={styles.socialLink} aria-label="Instagram">📷</button>
+              <button style={styles.socialLink} aria-label="LinkedIn">💼</button>
             </div>
           </div>
         </footer>

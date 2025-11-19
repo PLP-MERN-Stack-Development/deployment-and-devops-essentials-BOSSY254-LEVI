@@ -66,6 +66,7 @@ const AddTransaction = () => {
         type: formData.type
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [formData.amount, formData.description, formData.category, formData.type]);
 
   const handleQuickAmount = (amount) => {
@@ -109,10 +110,6 @@ const AddTransaction = () => {
     } finally {
       setLoading(false);
     }
-  };
-
-  const getSelectedCategory = () => {
-    return categories[formData.type]?.find(cat => cat.value === formData.category);
   };
 
   return (

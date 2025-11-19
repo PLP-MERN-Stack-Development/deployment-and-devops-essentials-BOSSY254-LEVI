@@ -33,13 +33,8 @@ const Transactions = () => {
     { value: 'Other', icon: '📦', color: '#64748b' }
   ];
 
-  useEffect(() => {
-    fetchTransactions();
-  }, [filters]);
-
   const fetchTransactions = async () => {
     try {
-      const token = localStorage.getItem('token');
       const queryParams = new URLSearchParams();
 
       Object.entries(filters).forEach(([key, value]) => {
@@ -88,6 +83,11 @@ const Transactions = () => {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    fetchTransactions();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filters]);
 
   const handleFilterChange = (e) => {
     setFilters({

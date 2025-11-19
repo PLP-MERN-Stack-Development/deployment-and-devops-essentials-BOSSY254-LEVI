@@ -34,7 +34,6 @@ const Dashboard = () => {
   const [budgets, setBudgets] = useState([]);
   const [trendData, setTrendData] = useState([]);
   const [financialGoals, setFinancialGoals] = useState([]);
-  const [insights, setInsights] = useState([]);
   const [loading, setLoading] = useState(true);
   const [timeRange, setTimeRange] = useState('month');
   const [activeView, setActiveView] = useState('overview');
@@ -48,6 +47,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     fetchDashboardData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [timeRange]);
 
   const fetchDashboardData = async () => {
@@ -69,14 +69,13 @@ const Dashboard = () => {
       const budgetsData = await budgetsRes.json();
       const trendsData = await trendsRes.json();
       const goalsData = await goalsRes.json();
-      const insightsData = await insightsRes.json();
+      await insightsRes.json();
 
       setStats(statsData);
       setRecentTransactions(transactionsData.transactions || []);
       setBudgets(budgetsData.budgets || []);
       setTrendData(trendsData.trends || []);
       setFinancialGoals(goalsData.goals || []);
-      setInsights(insightsData.insights || []);
     } catch (error) {
       console.error('Error fetching dashboard data:', error);
     } finally {
@@ -909,9 +908,6 @@ const styles = {
     borderRadius: '20px',
     backdropFilter: 'blur(20px)',
     overflow: 'hidden',
-  },
-  cardContent: {
-    padding: '1.5rem',
   },
   transactionList: {
     display: 'flex',
